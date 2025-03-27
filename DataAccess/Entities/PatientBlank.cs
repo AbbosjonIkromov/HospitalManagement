@@ -11,6 +11,8 @@ namespace HospitalManagement.DataAccess.Entities
         public bool IsActive { get; set; }
 
         public int PatientId { get; set; }
+
+        public int Severity { get; set; }
         public Patient Patient { get; set; }    
         public DateTime CreatedAt { get; set; }
 

@@ -1,10 +1,12 @@
-﻿using HospitalManagement.DataAccess;
+﻿using System.Reflection;
+using HospitalManagement.DataAccess;
 using HospitalManagement.DataAccess.Repository.Contracts;
 using HospitalManagement.DataAccess.Repository.Implements;
 using HospitalManagement.Services;
 using HospitalManagement.Services.Contracts;
 using HospitalManagement.Services.Implements;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace HospitalManagement.Extentions
 {
@@ -12,9 +14,67 @@ namespace HospitalManagement.Extentions
     {
         public static IServiceCollection AddDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IDoctorRepository, DoctorRepository>();
+            //Repository
+            //services.AddScoped<IDoctorRepository, DoctorRepository>();
+            //services.AddScoped<IPatientRepository, PatientRepository>();
+
+            //Services
             services.AddScoped<IDoctorService, DoctorService>();
-            services.AddSingleton<PdpService>();
+            services.AddScoped<IPatientService, PatientService>();
+            services.AddScoped<INotificationService, NotificationService>();
+
+
+            // AutoInjectRepository
+            var assembly = Assembly.GetExecutingAssembly();
+
+            var types = assembly.GetTypes()
+                .Where(r => r.IsClass && r.Name.EndsWith("Repository"))
+                .ToList();
+
+            foreach (var type in types)
+            {
+                var interfaceType = type.GetInterfaces().FirstOrDefault(r => r.Name.EndsWith("Repository"));
+
+                services.AddScoped(interfaceType, type);
+            }
+
+            // AutoInjectRepository
+            services.Scan(r => r.FromEntryAssembly()
+                .AddClasses(r => r.Where(r => r.Name.EndsWith("Repository")))
+                .AsMatchingInterface()
+                .WithLifetime(ServiceLifetime.Scoped));
+
+
+            // AutoMapper
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+
+            return services;
+        }
+
+        public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            var connection = configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<HospitalContext>(options =>
+            {
+                options
+                    .UseNpgsql(connection)
+                    .LogTo(Console.WriteLine, LogLevel.Information)
+                    .UseSnakeCaseNamingConvention();
+            });
+
+            return services;
+        }
+
+        public static IServiceCollection AddMonitoring(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddSerilog((serviceProvider, loggerConfiguration) =>
+            {
+                loggerConfiguration
+                    .ReadFrom
+                    .Configuration(configuration);
+            });
 
             return services;
         }

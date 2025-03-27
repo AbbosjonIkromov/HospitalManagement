@@ -6,10 +6,13 @@ namespace HospitalManagement.DataAccess.Repository.Implements
 {
     public class AppointmentRepository : Repository<Appointment>, IAppointmentRepository
     {
+        private readonly HospitalContext _context;
 
         public AppointmentRepository(HospitalContext context) : base(context)
         {
-            
+            _context = context;
         }
+
+
     }
 }

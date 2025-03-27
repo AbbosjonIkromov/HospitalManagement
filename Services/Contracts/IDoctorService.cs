@@ -7,5 +7,9 @@ namespace HospitalManagement.Services.Contracts
     {
         Task<IEnumerable<DoctorDto>> GetAllDoctors();
         Task<DoctorDto> CreateDoctor(CreateDoctorDto createDoctorDto);
+
+        Task<DoctorDto> GetDoctorById(long id);
+
+        Task SendPatentStatus();
     }
 }

@@ -6,6 +6,7 @@ using HospitalManagement.Dtos.Doctor;
 using HospitalManagement.Extentions;
 using HospitalManagement.Middleware;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Serilog;
 using Serilog.Context;
 
@@ -28,13 +29,12 @@ namespace HospitalManagement
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            builder.Services.AddDbContext<HospitalContext>(options =>
-            {
-                options
-                    .UseNpgsql(connectionString)
-                    .LogTo(Console.WriteLine, LogLevel.Information)
-                    .UseSnakeCaseNamingConvention();
-            });
+            builder.Services
+                .AddDependencies()
+                .AddDbContext(configuration)
+                .AddMonitoring(configuration);
+
+            builder.Services.AddMemoryCache();
 
             builder.Services.AddHttpClient();
 
@@ -47,20 +47,10 @@ namespace HospitalManagement
                 loggerConfiguration.ReadFrom.Configuration(configuration);
             });
 
-            //Log.Logger = new LoggerConfiguration()
-            //    .WriteTo.Console(outputTemplate:
-            //        "[{TimeStamp: HH:mm:ss} {Level:u3} ")
-            //    .Enrich.FromLogContext()
-            //    .CreateLogger();
-
-            //builder.Host.UseSerilog();
-
             // AppSetting OnStarted
             builder.Services.AddOptions<PdpSettings>()
                 .ValidateDataAnnotations();
 
-            // DI
-            builder.Services.AddDependencies();
 
             //Middleware
             builder.Services.AddTransient<GlobalExceptionMiddleware>();

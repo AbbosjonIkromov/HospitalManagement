@@ -1,9 +1,11 @@
 ﻿using HospitalManagement.DataAccess.Entities;
 using HospitalManagement.Dtos;
 using HospitalManagement.Dtos.Appointment;
+using HospitalManagement.Services.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Serilog.Context;
 
 namespace HospitalManagement.Controllers
 {
@@ -11,37 +13,49 @@ namespace HospitalManagement.Controllers
     [ApiController]
     public class PatientsController : ControllerBase
     {
-        private readonly IOptionsSnapshot<DoctorSettings> _doctorSettingSnap;
-        private readonly IOptionsMonitor<DoctorSettings> _doctorSettingMonitor;
+        private readonly IConfiguration _configuration;
         private readonly ILogger<PatientsController> _logger;
-        private readonly DoctorSettings _options;
+        private readonly IPatientService _patientService;
+        private readonly DoctorSettings _doctorSettings;
 
         public PatientsController(
-            IOptions<DoctorSettings> options,
-            IOptionsSnapshot<DoctorSettings> doctorSettingSnap,
-            IOptionsMonitor<DoctorSettings> doctorSettingMonitor,
-            ILogger<PatientsController> logger)  
+            IOptions<DoctorSettings> doctorSettingSnap,
+            IConfiguration configuration,
+            ILogger<PatientsController> logger,
+            IPatientService patientService)  
         {
-            _doctorSettingSnap = doctorSettingSnap;
-            _doctorSettingMonitor = doctorSettingMonitor;
+            _doctorSettings = doctorSettingSnap.Value;
+            _configuration = configuration;
             _logger = logger;
-            _options = options.Value;
+            _patientService = patientService;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var patients = await _patientService.GetAll();
+
+            return Ok(patients);
+        }
+
         [HttpPost("arrange-appointment")]
+
         public async Task<IActionResult> ArrangeAppointment([FromBody] ArrangeAppointmentDto requestDto)
         {
-            var time = TimeOnly.FromDateTime(requestDto.AppointmentDate);
-            var start = _options.WorkTime.Start;
-            var stop = _options.WorkTime.Stop;
-
-            if (!time.IsBetween(start, stop))
+            using (LogContext.PushProperty("PatientId", requestDto.PatientId))
             {
+                var time = TimeOnly.FromDateTime(requestDto.AppointmentDate);
 
-                _logger.LogWarning("Invalid Time");
-                return BadRequest("Doctor is not available at this time");
+                if (!time.IsBetween(_doctorSettings.WorkTime.Start, _doctorSettings.WorkTime.Stop))
+                {
+                    _logger.LogWarning("Doctor is not available at this time");
+
+                    return BadRequest("Doctor is not available this time");
+                }
+
+                _logger.LogWarning("{@Request}, Patient with PasswordSerial {PasswordSerial}", requestDto, requestDto.PasswordSerial);
             }
 
-            _logger.LogInformation("Accepted");
             return Ok("Your appointment is arranged");
         }
     }

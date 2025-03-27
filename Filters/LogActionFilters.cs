@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace HospitalManagement.Filters
 {
-    public class LogActionFilters : IResultFilter
+    public class LogActionFilters : Attribute, IResultFilter
     {
         private Stopwatch _stopwatch;
         public void OnResultExecuting(ResultExecutingContext context)
@@ -18,7 +18,7 @@ namespace HospitalManagement.Filters
         {
             _stopwatch.Stop();
 
-            Console.WriteLine($"Executed: {context.ActionDescriptor.DisplayName} Elapsed: {_stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Executed: {context.ActionDescriptor.DisplayName}. Elapsed: {_stopwatch.ElapsedMilliseconds}ms");
         }
     }
 }
