@@ -31,6 +31,7 @@ namespace HospitalManagement
 
             builder.Services
                 .AddDependencies()
+                // .AddDbContext<HospitalManagementDbContext>(options => options.UseSqlServer(connectionString))
                 .AddDbContext(configuration)
                 .AddMonitoring(configuration);
 
