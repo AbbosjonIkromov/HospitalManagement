@@ -1,4 +1,5 @@
 
+using System.Reflection;
 using HospitalManagement.DataAccess;
 using HospitalManagement.DataAccess.Entities;
 using HospitalManagement.Dtos;
@@ -30,7 +31,7 @@ namespace HospitalManagement
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             builder.Services
-                .AddDependencies()
+                .AddApplicationServices()
                 .AddDbContext(configuration)
                 .AddMonitoring(configuration);
 
@@ -51,6 +52,8 @@ namespace HospitalManagement
             builder.Services.AddOptions<PdpSettings>()
                 .ValidateDataAnnotations();
 
+            //AutoMapper
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             //Middleware
             builder.Services.AddTransient<GlobalExceptionMiddleware>();

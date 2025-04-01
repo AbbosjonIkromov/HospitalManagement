@@ -12,45 +12,45 @@ namespace HospitalManagement.Extentions
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddDependencies(this IServiceCollection services)
-        {
-            //Repository
-            //services.AddScoped<IDoctorRepository, DoctorRepository>();
-            //services.AddScoped<IPatientRepository, PatientRepository>();
+        //public static IServiceCollection AddDependencies(this IServiceCollection services)
+        //{
+        //    //Repository
+        //    //services.AddScoped<IDoctorRepository, DoctorRepository>();
+        //    //services.AddScoped<IPatientRepository, PatientRepository>();
 
-            //Services
-            services.AddScoped<IDoctorService, DoctorService>();
-            services.AddScoped<IPatientService, PatientService>();
-            services.AddScoped<INotificationService, NotificationService>();
-
-
-            // AutoInjectRepository
-            var assembly = Assembly.GetExecutingAssembly();
-
-            var types = assembly.GetTypes()
-                .Where(r => r.IsClass && r.Name.EndsWith("Repository"))
-                .ToList();
-
-            foreach (var type in types)
-            {
-                var interfaceType = type.GetInterfaces().FirstOrDefault(r => r.Name.EndsWith("Repository"));
-
-                services.AddScoped(interfaceType, type);
-            }
-
-            // AutoInjectRepository
-            services.Scan(r => r.FromEntryAssembly()
-                .AddClasses(r => r.Where(r => r.Name.EndsWith("Repository")))
-                .AsMatchingInterface()
-                .WithLifetime(ServiceLifetime.Scoped));
+        //    //Services
+        //    services.AddScoped<IDoctorService, DoctorService>();
+        //    services.AddScoped<IPatientService, PatientService>();
+        //    services.AddScoped<INotificationService, NotificationService>();
 
 
-            // AutoMapper
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        //    // AutoInjectRepository
+        //    //var assembly = Assembly.GetExecutingAssembly();
+
+        //    //var types = assembly.GetTypes()
+        //    //    .Where(r => r.IsClass && r.Name.EndsWith("Repository"))
+        //    //    .ToList();
+
+        //    //foreach (var type in types)
+        //    //{
+        //    //    var interfaceType = type.GetInterfaces().FirstOrDefault(r => r.Name.EndsWith("Repository"));
+
+        //    //    services.AddScoped(interfaceType, type);
+        //    //}
+
+        //    // AutoInjectRepository
+        //    //services.Scan(r => r.FromEntryAssembly()
+        //    //    .AddClasses(r => r.Where(r => r.Name.EndsWith("Repository")))
+        //    //    .AsMatchingInterface()
+        //    //    .WithLifetime(ServiceLifetime.Scoped));
 
 
-            return services;
-        }
+        //    // AutoMapper
+        //   // services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+
+        //    return services;
+        //}
 
         public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
         {
@@ -75,6 +75,21 @@ namespace HospitalManagement.Extentions
                     .ReadFrom
                     .Configuration(configuration);
             });
+
+            return services;
+        }
+
+        // Static class, static method
+        // Automatik tarzda Repositorylarni va Servicelarni DI ga biriktirish uchun iwlatiladi
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.Scan(scan => scan
+                .FromAssemblies(Assembly.GetExecutingAssembly())
+                .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service") ||
+                                                             type.Name.EndsWith("Repository")))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
+                
 
             return services;
         }
