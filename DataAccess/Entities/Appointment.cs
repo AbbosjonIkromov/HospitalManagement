@@ -14,7 +14,7 @@ namespace HospitalManagement.DataAccess.Entities
 
         public int DoctorId { get; set; }
 
-        // 
+        // Navigation Property
         public Patient Patient { get; set; }
 
         public Doctor Doctor { get; set; }

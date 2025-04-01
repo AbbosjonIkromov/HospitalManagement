@@ -2787,3 +2787,258 @@ LEFT JOIN patient_blanks AS p0 ON p.patient_id = p0.patient_id
 2025-03-27 17:39:44.479 +05:00 [DBG] The connection queue processing loop for 0HNBD5HJNOIE6 completed.
 2025-03-27 17:39:44.480 +05:00 [DBG] Connection id "0HNBD5HJNOIE6" sending FIN because: "The Socket transport's send loop completed gracefully."
 2025-03-27 17:39:44.492 +05:00 [DBG] Connection id "0HNBD5HJNOIE6" stopped.
+2025-03-29 15:27:21.357 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-03-29 15:27:21.451 +05:00 [DBG] Hosting starting
+2025-03-29 15:27:21.754 +05:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2025-03-29 15:27:21.836 +05:00 [INF] Now listening on: https://localhost:7196
+2025-03-29 15:27:21.839 +05:00 [INF] Now listening on: http://localhost:5147
+2025-03-29 15:27:21.840 +05:00 [DBG] Loaded hosting startup assembly HospitalManagement
+2025-03-29 15:27:21.842 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-03-29 15:27:21.843 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-03-29 15:27:21.845 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-03-29 15:27:22.054 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-29 15:27:22.058 +05:00 [INF] Hosting environment: Development
+2025-03-29 15:27:22.059 +05:00 [INF] Content root path: C:\Users\Lenovo 5i Pro\source\repos\HospitalManagement
+2025-03-29 15:27:22.061 +05:00 [DBG] Hosting started
+2025-03-29 15:27:22.105 +05:00 [DBG] Connection id "0HNBELH595PA4" accepted.
+2025-03-29 15:27:22.110 +05:00 [DBG] Connection id "0HNBELH595PA5" accepted.
+2025-03-29 15:27:22.110 +05:00 [DBG] Connection id "0HNBELH595PA4" started.
+2025-03-29 15:27:22.116 +05:00 [DBG] Connection id "0HNBELH595PA5" started.
+2025-03-29 15:27:22.138 +05:00 [DBG] Connection id "0HNBELH595PA5" received FIN.
+2025-03-29 15:27:22.138 +05:00 [DBG] Connection id "0HNBELH595PA4" received FIN.
+2025-03-29 15:27:22.172 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-03-29 15:27:22.172 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-03-29 15:27:22.204 +05:00 [DBG] Connection id "0HNBELH595PA4" stopped.
+2025-03-29 15:27:22.204 +05:00 [DBG] Connection id "0HNBELH595PA5" stopped.
+2025-03-29 15:27:22.216 +05:00 [DBG] Connection id "0HNBELH595PA5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-03-29 15:27:22.216 +05:00 [DBG] Connection id "0HNBELH595PA4" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-03-29 15:27:22.588 +05:00 [DBG] Connection id "0HNBELH595PA6" accepted.
+2025-03-29 15:27:22.591 +05:00 [DBG] Connection id "0HNBELH595PA6" started.
+2025-03-29 15:27:22.642 +05:00 [DBG] Connection id "0HNBELH595PA6" received FIN.
+2025-03-29 15:27:22.645 +05:00 [DBG] Connection id "0HNBELH595PA7" accepted.
+2025-03-29 15:27:22.652 +05:00 [DBG] Connection id "0HNBELH595PA7" started.
+2025-03-29 15:27:22.656 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-03-29 15:27:22.662 +05:00 [DBG] Connection id "0HNBELH595PA6" stopped.
+2025-03-29 15:27:22.664 +05:00 [DBG] Connection id "0HNBELH595PA6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-03-29 15:27:22.671 +05:00 [DBG] Connection 0HNBELH595PA7 established using the following protocol: "Tls13"
+2025-03-29 15:27:22.749 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger - null null
+2025-03-29 15:27:22.932 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-03-29 15:27:22.945 +05:00 [DBG] No candidates found for the request path '/swagger'
+2025-03-29 15:27:22.948 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:22.959 +05:00 [INF] Executing: {"Value":"/swagger","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:22.977 +05:00 [INF] Executing: {"Value":"/swagger","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:22.986 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger - 301 0 null 249.1324ms
+2025-03-29 15:27:22.992 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - null null
+2025-03-29 15:27:23.004 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-03-29 15:27:23.006 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.009 +05:00 [INF] Executing: {"Value":"/swagger/index.html","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.069 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-03-29 15:27:23.077 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-03-29 15:27:23.086 +05:00 [INF] Executing: {"Value":"/swagger/index.html","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.095 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-03-29 15:27:23.097 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-03-29 15:27:23.100 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - 200 null text/html;charset=utf-8 107.807ms
+2025-03-29 15:27:23.107 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - null null
+2025-03-29 15:27:23.107 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.js - null null
+2025-03-29 15:27:23.112 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-29 15:27:23.107 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - null null
+2025-03-29 15:27:23.114 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - null null
+2025-03-29 15:27:23.127 +05:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2025-03-29 15:27:23.124 +05:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2025-03-29 15:27:23.137 +05:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2025-03-29 15:27:23.107 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.css - null null
+2025-03-29 15:27:23.148 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.149 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.159 +05:00 [INF] Executing: {"Value":"/swagger/index.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.150 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.157 +05:00 [DBG] No candidates found for the request path '/swagger/index.css'
+2025-03-29 15:27:23.107 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-29 15:27:23.167 +05:00 [INF] Executing: {"Value":"/swagger/index.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.159 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui.css","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.181 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.js - 200 null application/javascript;charset=utf-8 73.5202ms
+2025-03-29 15:27:23.164 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui-bundle.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.166 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.177 +05:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2025-03-29 15:27:23.209 +05:00 [INF] Executing: {"Value":"/swagger/index.css","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.211 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.148 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 39.0849ms
+2025-03-29 15:27:23.230 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-29 15:27:23.228 +05:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-29 15:27:23.228 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui-standalone-preset.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.247 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui.css","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.247 +05:00 [INF] Executing: {"Value":"/swagger/index.css","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.278 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - 200 154948 text/css 171.4922ms
+2025-03-29 15:27:23.289 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.css - 200 202 text/css 181.4518ms
+2025-03-29 15:27:23.282 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-29 15:27:23.304 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - 200 null text/javascript; charset=UTF-8 188.6764ms
+2025-03-29 15:27:23.323 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui-standalone-preset.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.353 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-29 15:27:23.355 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 247.9656ms
+2025-03-29 15:27:23.357 +05:00 [INF] Executing: {"Value":"/swagger/swagger-ui-bundle.js","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.366 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - 200 1466324 text/javascript 258.3906ms
+2025-03-29 15:27:23.722 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - null null
+2025-03-29 15:27:23.728 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-03-29 15:27:23.729 +05:00 [DBG] Request did not match any endpoints
+2025-03-29 15:27:23.734 +05:00 [INF] Executing: {"Value":"/swagger/v1/swagger.json","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.770 +05:00 [INF] Executing: {"Value":"/swagger/v1/swagger.json","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:23.781 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.3276ms
+2025-03-29 15:27:31.089 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7196/api/Patients - null null
+2025-03-29 15:27:31.111 +05:00 [DBG] 1 candidate(s) found for the request path '/api/Patients'
+2025-03-29 15:27:31.128 +05:00 [DBG] Endpoint 'HospitalManagement.Controllers.PatientsController.GetAll (HospitalManagement)' with route pattern 'api/Patients' is valid for the request path '/api/Patients'
+2025-03-29 15:27:31.139 +05:00 [DBG] Request matched endpoint 'HospitalManagement.Controllers.PatientsController.GetAll (HospitalManagement)'
+2025-03-29 15:27:31.148 +05:00 [INF] Executing: {"Value":"/api/Patients","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:31.163 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-03-29 15:27:31.177 +05:00 [INF] Executing endpoint 'HospitalManagement.Controllers.PatientsController.GetAll (HospitalManagement)'
+2025-03-29 15:27:31.246 +05:00 [INF] Route matched with {action = "GetAll", controller = "Patients"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller HospitalManagement.Controllers.PatientsController (HospitalManagement).
+2025-03-29 15:27:31.258 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-03-29 15:27:31.264 +05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-03-29 15:27:31.272 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-03-29 15:27:31.280 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-03-29 15:27:31.287 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-03-29 15:27:31.300 +05:00 [DBG] Executing controller factory for controller HospitalManagement.Controllers.PatientsController (HospitalManagement)
+2025-03-29 15:27:32.884 +05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-03-29 15:27:33.201 +05:00 [DBG] Executed controller factory for controller HospitalManagement.Controllers.PatientsController (HospitalManagement)
+2025-03-29 15:27:35.164 +05:00 [DBG] Entity Framework Core 9.0.3 initialized 'HospitalContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: using snake-case naming (culture=)
+2025-03-29 15:27:35.381 +05:00 [DBG] Compiling query expression: 
+'DbSet<Patient>()
+    .AsNoTracking()
+    .Select(dtoPatient => new PatientDto{ 
+        PatientId = dtoPatient.PatientId, 
+        DataOfBirth = dtoPatient.DataOfBirth.ToString(), 
+        IsActive = dtoPatient.IsActive, 
+        RegisteredDate = dtoPatient.RegisteredDate.ToString("dd-MM-yyyy"), 
+        PatientBlankId = dtoPatient.PatientBlankId, 
+        BlankIdentifier = dtoPatient.PatientBlank.BlankIdentifier, 
+        FullName = string.Format(
+            format: "{0} {1}", 
+            arg0: dtoPatient.FirstName, 
+            arg1: dtoPatient.LastName) 
+    }
+    )'
+2025-03-29 15:27:36.245 +05:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<PatientDto>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> 0
+            1 -> 1
+            2 -> 2
+            3 -> 3
+            4 -> 4
+            5 -> 5
+            6 -> 6
+            7 -> 7
+        SELECT p.patient_id, p.data_of_birth, p.is_active, p.registered_date, p.patient_blank_id, p0.blank_identifier, p.first_name, p.last_name
+        FROM patients AS p
+        LEFT JOIN patient_blanks AS p0 ON p.patient_id == p0.patient_id) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> 0
+            1 -> 1
+            2 -> 2
+            3 -> 3
+            4 -> 4
+            5 -> 5
+            6 -> 6
+            7 -> 7
+        SELECT p.patient_id, p.data_of_birth, p.is_active, p.registered_date, p.patient_blank_id, p0.blank_identifier, p.first_name, p.last_name
+        FROM patients AS p
+        LEFT JOIN patient_blanks AS p0 ON p.patient_id == p0.patient_id, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        int? value1;
+        DateOnly? value2;
+        bool? value3;
+        DateTime? value4;
+        int? value5;
+        string value6;
+        string value7;
+        string value8;
+        value1 = (int?)dataReader.GetInt32(0);
+        value2 = dataReader.IsDBNull(1) ? default(DateOnly?) : (DateOnly?)dataReader.GetFieldValue<DateOnly>(1);
+        value3 = (bool?)dataReader.GetBoolean(2);
+        value4 = (DateTime?)dataReader.GetDateTime(3);
+        value5 = dataReader.IsDBNull(4) ? default(int?) : (int?)dataReader.GetInt32(4);
+        value6 = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+        value7 = dataReader.GetString(6);
+        value8 = dataReader.GetString(7);
+        return new PatientDto{ 
+            PatientId = (int)value1, 
+            DataOfBirth = value2.ToString(), 
+            IsActive = (bool)value3, 
+            RegisteredDate = value4 == default(DateTime?) ? null : ((DateTime)value4).ToString("dd-MM-yyyy"), 
+            PatientBlankId = value5, 
+            BlankIdentifier = value6, 
+            FullName = string.Format(
+                format: "{0} {1}", 
+                arg0: value7, 
+                arg1: value8) 
+        }
+        ;
+    }, 
+    contextType: HospitalManagement.DataAccess.HospitalContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2025-03-29 15:27:36.343 +05:00 [DBG] Creating DbConnection.
+2025-03-29 15:27:36.466 +05:00 [DBG] Created DbConnection. (119ms).
+2025-03-29 15:27:36.479 +05:00 [DBG] Opening connection to database 'hospital_management' on server 'tcp://localhost:5432'.
+2025-03-29 15:27:36.937 +05:00 [DBG] Opened connection to database 'hospital_management' on server 'tcp://localhost:5432'.
+2025-03-29 15:27:36.954 +05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-03-29 15:27:36.978 +05:00 [DBG] Created DbCommand for 'ExecuteReader' (17ms).
+2025-03-29 15:27:36.984 +05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (32ms).
+2025-03-29 15:27:37.009 +05:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.patient_id, p.data_of_birth, p.is_active, p.registered_date, p.patient_blank_id, p0.blank_identifier, p.first_name, p.last_name
+FROM patients AS p
+LEFT JOIN patient_blanks AS p0 ON p.patient_id = p0.patient_id
+2025-03-29 15:27:37.092 +05:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.patient_id, p.data_of_birth, p.is_active, p.registered_date, p.patient_blank_id, p0.blank_identifier, p.first_name, p.last_name
+FROM patients AS p
+LEFT JOIN patient_blanks AS p0 ON p.patient_id = p0.patient_id
+2025-03-29 15:27:37.281 +05:00 [DBG] Closing data reader to 'hospital_management' on server 'tcp://localhost:5432'.
+2025-03-29 15:27:37.312 +05:00 [DBG] A data reader for 'hospital_management' on server 'tcp://localhost:5432' is being disposed after spending 164ms reading results.
+2025-03-29 15:27:37.326 +05:00 [DBG] Closing connection to database 'hospital_management' on server 'tcp://localhost:5432'.
+2025-03-29 15:27:37.346 +05:00 [DBG] Closed connection to database 'hospital_management' on server 'tcp://localhost:5432' (18ms).
+2025-03-29 15:27:37.362 +05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-03-29 15:27:37.379 +05:00 [DBG] No information found on request to perform content negotiation.
+2025-03-29 15:27:37.381 +05:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-03-29 15:27:37.384 +05:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-03-29 15:27:37.393 +05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-03-29 15:27:37.398 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HospitalManagement.Dtos.Patient.PatientDto, HospitalManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 15:27:37.443 +05:00 [INF] Executed action HospitalManagement.Controllers.PatientsController.GetAll (HospitalManagement) in 6140.0217ms
+2025-03-29 15:27:37.451 +05:00 [INF] Executed endpoint 'HospitalManagement.Controllers.PatientsController.GetAll (HospitalManagement)'
+2025-03-29 15:27:37.456 +05:00 [INF] Executing: {"Value":"/api/Patients","HasValue":true,"$type":"PathString"}
+2025-03-29 15:27:37.473 +05:00 [DBG] 'HospitalContext' disposed.
+2025-03-29 15:27:37.487 +05:00 [DBG] Disposing connection to database 'hospital_management' on server 'tcp://localhost:5432'.
+2025-03-29 15:27:37.509 +05:00 [DBG] Disposed connection to database 'hospital_management' on server 'tcp://localhost:5432' (22ms).
+2025-03-29 15:27:37.514 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7196/api/Patients - 200 null application/json; charset=utf-8 6425.5061ms
+2025-03-29 15:28:36.235 +05:00 [DBG] Connection id "0HNBELH595PA7" received FIN.
+2025-03-29 15:28:36.252 +05:00 [DBG] Connection id "0HNBELH595PA7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-03-29 15:28:36.253 +05:00 [DBG] Connection id "0HNBELH595PA7" is closed. The last processed stream ID was 21.
+2025-03-29 15:28:36.262 +05:00 [DBG] The connection queue processing loop for 0HNBELH595PA7 completed.
+2025-03-29 15:28:36.268 +05:00 [DBG] Connection id "0HNBELH595PA7" stopped.
